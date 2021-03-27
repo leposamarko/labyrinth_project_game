@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haunted", "Haunted\Haunted.csproj", "{CD0A1D16-94E1-49ED-B039-48A3965F6906}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haunted.GameModel", "Haunted.GameModel\Haunted.GameModel.csproj", "{F0F8527B-F65E-45C3-84B3-C3F3CD5EFC23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haunted.GameControl", "Haunted.GameControl\Haunted.GameControl.csproj", "{4B91EF8E-735E-49C7-BF1D-B1B8114DDC7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haunted.GameLogic", "Haunted.GameLogic\Haunted.GameLogic.csproj", "{2FDCA2D2-D4A3-4607-A386-89AF146E9C73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haunted.GameLogicTest", "Haunted.GameLogicTest\Haunted.GameLogicTest.csproj", "{B3516148-83DA-4DE5-8ECA-7CEFB9425B95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haunted.Repository", "Haunted.Repository\Haunted.Repository.csproj", "{728132C3-F58A-4546-9090-59179A3C420C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haunted.Renderer", "Haunted.Renderer\Haunted.Renderer.csproj", "{1B2755C7-E86D-4ADA-9E0D-4F5A476758EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CD0A1D16-94E1-49ED-B039-48A3965F6906}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD0A1D16-94E1-49ED-B039-48A3965F6906}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD0A1D16-94E1-49ED-B039-48A3965F6906}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD0A1D16-94E1-49ED-B039-48A3965F6906}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0F8527B-F65E-45C3-84B3-C3F3CD5EFC23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0F8527B-F65E-45C3-84B3-C3F3CD5EFC23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0F8527B-F65E-45C3-84B3-C3F3CD5EFC23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0F8527B-F65E-45C3-84B3-C3F3CD5EFC23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B91EF8E-735E-49C7-BF1D-B1B8114DDC7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B91EF8E-735E-49C7-BF1D-B1B8114DDC7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B91EF8E-735E-49C7-BF1D-B1B8114DDC7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B91EF8E-735E-49C7-BF1D-B1B8114DDC7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FDCA2D2-D4A3-4607-A386-89AF146E9C73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FDCA2D2-D4A3-4607-A386-89AF146E9C73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FDCA2D2-D4A3-4607-A386-89AF146E9C73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FDCA2D2-D4A3-4607-A386-89AF146E9C73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3516148-83DA-4DE5-8ECA-7CEFB9425B95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3516148-83DA-4DE5-8ECA-7CEFB9425B95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3516148-83DA-4DE5-8ECA-7CEFB9425B95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3516148-83DA-4DE5-8ECA-7CEFB9425B95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{728132C3-F58A-4546-9090-59179A3C420C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{728132C3-F58A-4546-9090-59179A3C420C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{728132C3-F58A-4546-9090-59179A3C420C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{728132C3-F58A-4546-9090-59179A3C420C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B2755C7-E86D-4ADA-9E0D-4F5A476758EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B2755C7-E86D-4ADA-9E0D-4F5A476758EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B2755C7-E86D-4ADA-9E0D-4F5A476758EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B2755C7-E86D-4ADA-9E0D-4F5A476758EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0AF0B6E5-B948-43BA-8A35-59EE45ACF013}
+	EndGlobalSection
+EndGlobal
