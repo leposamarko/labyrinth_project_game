@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Haunted.GameModel
 {
-    class Ghost
+    class Ghost : Element
     {
+        public Ghost(int x, int y)
+        {
+            this.area = new System.Drawing.Rectangle();
+        }
     }
 }

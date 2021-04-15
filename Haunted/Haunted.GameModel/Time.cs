@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Haunted.GameModel
 {
-    class Time
+    class Time :Element
     {
+        public Time(int x, int y)
+        {
+            this.area = new System.Drawing.Rectangle();
+        }
     }
 }
