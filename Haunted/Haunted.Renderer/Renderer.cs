@@ -8,5 +8,6 @@ namespace Haunted.Renderer
 {
     class Renderer
     {
+        
     }
 }
