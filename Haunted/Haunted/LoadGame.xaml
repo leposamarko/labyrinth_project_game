@@ -5,8 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Haunted"
         mc:Ignorable="d"
-        Title="LoadGame" Height="450" Width="800">
+        Title="LoadGame" Height="720" Width="1280">
     <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="UniformToFill" Viewport="0, 0., 1, 1.2" ImageSource="Images/menu_background.png"></ImageBrush>
+        </Grid.Background>
+        <Label FontSize="60" FontWeight="ExtraBold" FontFamily="chiller" Content="List of Saved Games::" HorizontalAlignment="Left" Margin="63,42,0,0" VerticalAlignment="Top" Height="76" Width="560" Background="Gray"/>
+
+        <Button Click="Back" Content="Back" Background="Transparent" FontSize="150" FontFamily="Chiller" FontWeight="ExtraBold" HorizontalAlignment="Left" Margin="959,509,0,0" VerticalAlignment="Top" Width="269" Height="146"/>
+        <Button Click="Load" Content="Load" Background="Transparent" FontSize="150" FontFamily="Chiller" FontWeight="ExtraBold" HorizontalAlignment="Left" Margin="959,329,0,0" VerticalAlignment="Top" Width="269" Height="173"/>
         
+        <ListBox HorizontalAlignment="Left" Height="537" Margin="63,118,0,0" VerticalAlignment="Top" Width="560" x:Name="games" Background="Gray">
+            <ListBox.ItemContainerStyle>
+                <Style>
+                    <Setter Property="TextElement.FontSize" Value="24"/>
+                    <Setter Property="TextElement.FontFamily" Value="courier new"/>
+                </Style>
+            </ListBox.ItemContainerStyle>
+        </ListBox>
+        <Label Content="Player name:" FontFamily="chiller" FontSize="60" FontWeight="ExtraBold" HorizontalAlignment="Left" Margin="837,19,0,0" VerticalAlignment="Top" Height="62" Width="344" Background="Gray"/>
+        <TextBox HorizontalAlignment="Left" FontFamily="courier new" Height="62" Margin="837,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="344" Background="Gray" FontSize="40" x:Name="playerName"/>
     </Grid>
 </Window>
