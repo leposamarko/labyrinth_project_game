@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Haunted"
         mc:Ignorable="d"
-        Title="EndOfGame" Height="450" Width="800">
+        Title="EndOfGame" Height="720" Width="1280">
     <Grid>
-        
+
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/end.png"></ImageBrush>
+        </Grid.Background>
+        <Label Content="You have been eaten" Foreground="White" FontWeight="ExtraBold"  FontFamily="Chiller" FontSize="180" HorizontalAlignment="Center" VerticalAlignment="Top" Width="1184" Height="254" Margin="0,478,0,0"/>
+        <Button Click="Retry" FontSize="70" Foreground="White"  Background="Transparent" Content="Retry" HorizontalAlignment="Left" Margin="48,79,0,0" VerticalAlignment="Top" Height="109" Width="227"/>
+        <Button Click="ExitToMain" FontSize="70" Foreground="White"  Background="Transparent" Content="Main Menu" HorizontalAlignment="Left" Margin="816,79,0,0" VerticalAlignment="Top" Height="109" Width="371"/>
     </Grid>
 </Window>

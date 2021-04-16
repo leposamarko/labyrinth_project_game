@@ -23,5 +23,15 @@ namespace Haunted
         {
             InitializeComponent();
         }
+
+        private void Retry(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ExitToMain(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
