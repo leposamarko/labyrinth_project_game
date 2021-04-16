@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Haunted.GameModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,8 +8,11 @@ using System.Xml.Linq;
 
 namespace Haunted.Repository
 {
-    interface IStorageRepository
+    interface IStorageRepository //save game, load game, new time/score, get scores to load the leaderboard
     {
-        public void GetData(XDocument data);
+        void SaveGame(string name, IGameModel model);
+        HauntedModel LoadGame(string name);
+        void NewTime(string name, TimeSpan time);
+        List<TimeToXML> GetTime();
     }
 }
