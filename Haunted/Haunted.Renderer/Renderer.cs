@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Haunted.Renderer
 {
-    class Renderer
+    class Renderer // To display the game
     {
         
     }

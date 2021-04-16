@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Haunted.GameControl
 {
-    class Control
+    class Control // How to control the char, plus the Loading and saving, onrenderer, continue
     {
     }
 }
