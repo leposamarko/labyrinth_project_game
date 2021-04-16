@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Haunted.GameModel
 {
-    class TimeToXML
+    public class TimeToXML
     {
         public string Name { get; set; }
         public TimeSpan Time { get; set; }
