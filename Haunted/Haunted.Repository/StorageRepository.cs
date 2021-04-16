@@ -34,7 +34,13 @@ namespace Haunted.Repository
 
         public List<TimeToXML> GetTime()
         {
-            
+            List<TimeToXML> time = new List<TimeToXML>();
+            foreach (XElement item in this.times.Root.Descendants("onestime"))
+            {
+                time.Add(new TimeToXML(item.Element("name").Value, TimeSpan.Parse(item.Element("time").Value)));
+            }
+            List<TimeToXML> inOrder = time.OrderByDescending(x => x.Time).ToList();
+            return inOrder;
         }
 
         public HauntedModel LoadGame(string name)
