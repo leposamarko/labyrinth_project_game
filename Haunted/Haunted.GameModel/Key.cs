@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Haunted.GameModel
 {
-    class Key:Element
+    public class Key:Element
     {
         public Key(int x, int y)
         {

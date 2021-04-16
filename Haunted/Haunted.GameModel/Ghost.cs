@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Haunted.GameModel
 {
-    class Ghost : Element
+    public class Ghost : Element
     {
         public Ghost(int x, int y)
         {

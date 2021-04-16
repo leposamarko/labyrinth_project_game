@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Haunted.GameModel
 {
-    class Time :Element
+    public class Time :Element
     {
         public Time(int x, int y)
         {

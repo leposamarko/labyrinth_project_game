@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Haunted.GameModel
 {
-    class GirlPlayer :Element
+    public class GirlPlayer :Element
     {
         public GirlPlayer()
         {

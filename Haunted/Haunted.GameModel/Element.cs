@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Haunted.GameModel
 {
-    class Element
+    public class Element
     {
         protected Rect area;
 
