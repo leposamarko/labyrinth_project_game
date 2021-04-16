@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Haunted.GameModel
 {
     public class Key:Element
     {
-        public Key(int x, int y)
+        public Key(double x, double y)
         {
-            this.area = new System.Drawing.Rectangle();
+            this.area = new Rect(x, y, Config.KeySize, Config.KeySize);
         }
     }
 }

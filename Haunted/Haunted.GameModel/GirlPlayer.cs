@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
+using System.Windows;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,8 +11,8 @@ namespace Haunted.GameModel
     {
         public GirlPlayer()
         {
-            this.area = new Rectangle();
+            this.area = new Rect(0, 0, Config.PlayerWidth, Config.PlayerHeight); //egyenlőre 0,0 mert nemtudom, hogy kell az indulási helyet beállítani/ranndomizálni.
         }
-        public List<TimeToXML> Scores { get; set; }
+        public List<TimeToXML> Times { get; set; }
     }
 }

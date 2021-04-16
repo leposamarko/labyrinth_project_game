@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Haunted.GameModel
 {
@@ -10,7 +11,7 @@ namespace Haunted.GameModel
     {
         public Ghost(int x, int y)
         {
-            this.area = new System.Drawing.Rectangle();
+            this.area = new Rect(x,y,Config.GhostWidth, Config.GhostHeight)
         }
     }
 }
