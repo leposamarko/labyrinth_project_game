@@ -24,7 +24,13 @@ namespace Haunted.GameModel
 
         public HauntedModel()
         {
+            this.Keys = new List<Key>();      //ez a kettő a szellem és kulcs randomizer lenne, egyenlőre ezt így hagyom, passz hogy itt kell e megcsinálni vagy nem
+            this.Ghosts = new List<Ghost>();
+            this.myTime = new Time(Config.TimePlaceX, Config.TimePlaceY);
 
+            this.Background = new Point[2];
+            this.Background[0] = new Point(0, 0);   //ez a 3 bacgroundos még passz hogy mi, egyenlőre itt lesz max áttírjuk ha rájövünk mire jó
+            this.Background[1] = new Point(Config.GameWidth - 1, 0);
         }
         public static int NumGhost { get { return numGhost; } }
 
@@ -32,9 +38,9 @@ namespace Haunted.GameModel
 
         public Time myTime { get; set; }
 
-        int IGameModel.numGhost { get { return 5; } }
+        int IGameModel.numGhost { get { return 4; } } //randomizerhez a számok, ugye azért 1el kevesebb meet a for ciklus 0-ról indul
 
-        int IGameModel.numKey { get { return 4; } }
+        int IGameModel.numKey { get { return 3; } }
 
         public List<Ghost> Ghosts { get; set; }
         public List<Key> Keys { get; set; }
