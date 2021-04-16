@@ -23,5 +23,10 @@ namespace Haunted
         {
             InitializeComponent();
         }
+
+        private void Back(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

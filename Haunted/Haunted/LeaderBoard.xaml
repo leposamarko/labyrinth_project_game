@@ -5,8 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Haunted"
         mc:Ignorable="d"
-        Title="LeaderBoard" Height="450" Width="800">
+        Title="LeaderBoard" Height="720" Width="1280">
     <Grid>
-        
+        <Grid.Background>
+            <ImageBrush Stretch="UniformToFill" Viewport="0, 0., 1, 1.2"  ImageSource="Images/menu_background.png"></ImageBrush>
+        </Grid.Background>
+        <Label FontSize="60" FontWeight="ExtraBold" FontFamily="chiller" Content="List of Top Players:" HorizontalAlignment="Left" Margin="63,42,0,0" VerticalAlignment="Top" Height="76" Width="495" Background="Gray"/>
+
+        <Button Click="Back" Content="Back" HorizontalAlignment="Left" Margin="792,515,0,0" VerticalAlignment="Top" Width="188" Height="127" FontSize="120" Background="Transparent" FontWeight="ExtraBold" FontFamily="Chiller"/>
+        <ListBox HorizontalAlignment="Left" Height="484" Margin="63,116,0,0" VerticalAlignment="Top" Width="650" x:Name="scores" Background="Gray">
+            <ListBox.ItemContainerStyle>
+                <Style>
+                    <Setter Property="TextElement.FontSize" Value="24"/>
+                    <Setter Property="TextElement.FontFamily" Value="courier new"/>
+                </Style>
+            </ListBox.ItemContainerStyle>
+        </ListBox>
     </Grid>
 </Window>
