@@ -1,4 +1,5 @@
 ﻿using Haunted.GameModel;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -45,17 +46,47 @@ namespace Haunted.Repository
 
         public HauntedModel LoadGame(string name)
         {
-            throw new NotImplementedException();
+            HauntedModel model;
+            using (StreamReader sw = new StreamReader(name + ".json"))
+            {
+                string json = sw.ReadToEnd();
+                model = JsonConvert.DeserializeObject<HauntedModel>(json);
+            }
+            return model;
         }
 
         public void NewTime(string name, TimeSpan time)
         {
-            throw new NotImplementedException();
+            if (this.times == null)
+            {
+                this.times = new XDocument();
+                this.times.Add(new XElement("times"));
+                XElement newTime = new XElement("onestime", new XElement("name", name), new XElement("time", time));
+                this.times.Element("times").Add(newTime);
+                this.times.Save("times.xml");
+            }
+            else
+            {
+                XElement newTime = new XElement("onestime", new XElement("name", name), new XElement("time", time));
+                this.times.Element("times").Add(newTime);
+                this.times.Save("times.xml");
+            }
         }
 
         public void SaveGame(string name, IGameModel model)
         {
-            throw new NotImplementedException();
+            var fileName = name + ".json";
+            JsonSerializer serializer = new JsonSerializer();
+            using (StreamWriter sw = new StreamWriter(fileName))
+            using (JsonWriter writer = new JsonTextWriter(sw))
+            {
+                serializer.Serialize(writer, model);
+            }
+
+            if (!this.games.Contains(name))
+            {
+                this.games.Add(name);
+            }
         }
     }
 }

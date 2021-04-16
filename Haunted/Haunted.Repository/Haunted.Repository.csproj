@@ -6,7 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Haunted.GameModel\Haunted.GameModel.csproj" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+	<ProjectReference Include="..\Haunted.GameModel\Haunted.GameModel.csproj" />
   </ItemGroup>
 
 </Project>
