@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Drawing;
+using System.Windows;
 using System.Threading.Tasks;
 
 namespace Haunted.GameModel
 {
     class Element
     {
-        protected Rectangle area;
+        protected Rect area;
 
-        public Rectangle Area { get { return this.area; } }
+        public Rect Area { get { return this.area; } }
 
         public Point GetPoints { get { return new Point(this.area.X, this.area.Y); } }
         public void ChangeX(int x)
