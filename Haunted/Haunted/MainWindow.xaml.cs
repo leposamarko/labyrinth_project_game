@@ -24,5 +24,22 @@ namespace Haunted
         {
             InitializeComponent();
         }
+
+        private void LBoard(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void NewGame(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void LoadGame(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void Exit(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

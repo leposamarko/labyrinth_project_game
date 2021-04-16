@@ -10,5 +10,11 @@
         <Grid.Background>
             <ImageBrush Stretch="UniformToFill" Viewport="0, 0., 1, 1.2" ImageSource="Images/menu_background.png"></ImageBrush>
         </Grid.Background>
+        <Label Content="HAUNTED" FontWeight="ExtraBold"  FontFamily="Chiller" FontSize="300" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1124" Height="391" Margin="146,-19,0,0"/>
+        <Button Click="NewGame" Content="New Game" FontSize="50" Background="Black" Foreground="White" HorizontalAlignment="Left" Margin="78,395,0,0" VerticalAlignment="Top" Width="385" Height="75"/>
+        <Button Click="Exit" Content="Exit Game" FontSize="50" Background="Black" Foreground="White" HorizontalAlignment="Left" Margin="78,577,0,0" VerticalAlignment="Top" Width="385" Height="75"/>
+        <Button Click="LBoard" Content="Leaderboard" FontSize="50" Background="Black" Foreground="White" HorizontalAlignment="Left" Margin="821,395,0,0" VerticalAlignment="Top" Width="385" Height="75"/>
+        <Button Click="LoadGame" Content="Load Gme" FontSize="50" Background="Black" Foreground="White" HorizontalAlignment="Left" Margin="821,577,0,0" VerticalAlignment="Top" Width="385" Height="75"/>
+
     </Grid>
 </Window>
