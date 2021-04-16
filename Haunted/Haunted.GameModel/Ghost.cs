@@ -11,7 +11,7 @@ namespace Haunted.GameModel
     {
         public Ghost(int x, int y)
         {
-            this.area = new Rect(x,y,Config.GhostWidth, Config.GhostHeight)
+            this.area = new Rect(x, y, Config.GhostWidth, Config.GhostHeight);
         }
     }
 }
