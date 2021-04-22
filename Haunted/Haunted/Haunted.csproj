@@ -11,10 +11,103 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\blue_key.png" />
+    <None Remove="Images\end.png" />
+    <None Remove="Images\ghost.png" />
+    <None Remove="Images\girl_char.png" />
+    <None Remove="Images\girl_dead.png" />
+    <None Remove="Images\gold_key.png" />
+    <None Remove="Images\grass_base.png" />
+    <None Remove="Images\green_key.png" />
+    <None Remove="Images\horizont_wall.png" />
+    <None Remove="Images\key_tracker_blue.png" />
+    <None Remove="Images\key_tracker_gold.png" />
+    <None Remove="Images\key_tracker_green.png" />
+    <None Remove="Images\key_tracker_purple.png" />
+    <None Remove="Images\left_upp_corner.png" />
+    <None Remove="Images\life_heart.png" />
+    <None Remove="Images\menubackground.png" />
+    <None Remove="Images\purple_key.png" />
+    <None Remove="Images\right_down_corner.png" />
+    <None Remove="Images\right_upp_corner.png" />
+    <None Remove="Images\sidewalk_base.png" />
+    <None Remove="Images\vertical_wall.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\key_tracker_blue.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\blue_key.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\end.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ghost.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\girl_char.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\girl_dead.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\gold_key.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\grass_base.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\green_key.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\horizont_wall.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\key_tracker_gold.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\key_tracker_green.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\key_tracker_purple.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\left_upp_corner.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\life_heart.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\menubackground.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\purple_key.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\right_down_corner.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\right_upp_corner.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\sidewalk_base.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\vertical_wall.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>
