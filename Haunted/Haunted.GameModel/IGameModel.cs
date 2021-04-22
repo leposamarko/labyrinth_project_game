@@ -10,9 +10,9 @@ namespace Haunted.GameModel
     public interface IGameModel //megj.: Az órához stopwatch-ot kell használni, melyet xy.stop() után .elapsed-el el lehet menteni egy timespanbe -> https://stackoverflow.com/questions/13690708/timer-c-sharp-use-in-game-development
     {
         public bool[,] Walls { get; set; }
-        public Point Player { get; set; }
+        public GirlPlayer Player { get; set; }
         public Point Exit { get; set; }
-        public Point Key { get; set; }
+        public Key Key { get; set; }
         public double GameWidth { get;  set; } // Pixel size
         public double GameHeight { get;  set; } // Pixel sizes 
         public double TileSize { get; set; }

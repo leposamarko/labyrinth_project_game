@@ -1,18 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// <copyright file="HauntedModel.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace Haunted.GameModel
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using System.Windows;
+
+    /// <summary>
+    /// haunted model.
+    /// </summary>
     public class HauntedModel : IGameModel
     {
         public bool[,] Walls { get; set; }
-        public Point Player { get; set ; }
+        public GirlPlayer Player { get; set ; }
         public Point Exit { get; set; }
-        public Point Key { get; set; }
+        public Key Key { get; set; }
         public double GameWidth { get; set; }
         public double GameHeight { get; set; }
         public double TileSize { get; set; }
@@ -22,7 +29,7 @@ namespace Haunted.GameModel
         private int lifeCount = 3;
         private int numKey = 4;
 
-        public HauntedModel()
+        public HauntedModel(double w, double h)
         {
             this.Keys = new List<Key>();      //ez a kettő a szellem és kulcs randomizer lenne, egyenlőre ezt így hagyom, passz hogy itt kell e megcsinálni vagy nem
             this.Ghosts = new List<Ghost>();
@@ -31,6 +38,8 @@ namespace Haunted.GameModel
             this.Background = new Point[2];
             this.Background[0] = new Point(0, 0);   //ez a 3 bacgroundos még passz hogy mi, egyenlőre itt lesz max áttírjuk ha rájövünk mire jó
             this.Background[1] = new Point(Config.GameWidth - 1, 0);
+            this.GameWidth = w;
+            this.GameHeight = h;
         }
         public static int NumGhost { get { return numGhost; } }
 
