@@ -13,6 +13,7 @@ namespace Haunted.GameLogic
     using System.Threading.Tasks;
     using System.Windows;
     using Haunted.GameModel;
+    using Haunted.Repository;
 
     /// <summary>
     /// Game logic.
@@ -20,16 +21,18 @@ namespace Haunted.GameLogic
     internal class GameLogic : IGameLogic
     {
         private IGameModel model;
+        private IStorageRepository repo1;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GameLogic"/> class.
         /// </summary>
         /// <param name="model">modle.</param>
         /// <param name="fname">fname.</param>
-        public GameLogic(HauntedModel model, string fname)
+        public GameLogic(HauntedModel model, string fname, IStorageRepository rep)
         {
             this.model = model;
             this.Initmodel(fname);
+            this.repo1 = rep;
         }
 
         /// <summary>
@@ -61,14 +64,28 @@ namespace Haunted.GameLogic
                 for (int y = 0; y < heigth; y++)
                 {
                     char current = lines[y+2][x];
-                    this.model.Walls[x, y] = (current == 'w'); //w like wall
-                    if (current == 's') model.Player = new GirlPlayer(x, y); // s like start
-                    if (current == 'e') model.Exit = new Point(x, y); // e like exit
-                    if (current == 'g') model.Ghosts.Add(new Ghost(x,y)); // e like exit
-                    if (current == 'g') model.Keys.Add(new Key(x,y)); // e like exit
+                    this.model.Walls[x, y] = current == 'w'; // w like wall
+                    if (current == 's')
+                    {
+                        this.model.Player = new GirlPlayer(x, y); // s like start
+                    }
+
+                    if (current == 'e')
+                    {
+                        this.model.Exit = new Point(x, y); // e like exit
+                    }
+
+                    if (current == 'g')
+                    {
+                        this.model.Ghosts.Add(new Ghost(x, y)); // g like gost
+                    }
+
+                    if (current == 'k')
+                    {
+                        this.model.Keys.Add(new Key(x, y)); // k like key
+                    }
                 }
             }
-
         }
 
         /// <summary>
@@ -88,7 +105,25 @@ namespace Haunted.GameLogic
             }
 
             return this.model.Player.Equals(this.model.Exit);
+        }
 
+        /// <summary>
+        /// Score listing method.
+        /// </summary>
+        /// <returns>A list.</returns>
+        public List<TimeToXML> ListTime()
+        {
+            return this.repo1.GetTime();
+        }
+
+        /// <summary>
+        /// New score adding method.
+        /// </summary>
+        /// <param name="name">Name.</param>
+        /// <param name="score">Score.</param>
+        public void NewTime(string name, TimeSpan time)
+        {
+            this.repo1.NewTime(name, time);
         }
     }
 }

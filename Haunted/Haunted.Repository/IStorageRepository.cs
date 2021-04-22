@@ -8,7 +8,7 @@ using System.Xml.Linq;
 
 namespace Haunted.Repository
 {
-    interface IStorageRepository //save game, load game, new time/score, get scores to load the leaderboard
+    public interface IStorageRepository //save game, load game, new time/score, get scores to load the leaderboard
     {
         void SaveGame(string name, IGameModel model);
         HauntedModel LoadGame(string name);

@@ -10,7 +10,7 @@ using System.Xml.Linq;
 
 namespace Haunted.Repository
 {
-    class StorageRepository : IStorageRepository //get files, get scores/time, load game, new time, save game
+    public class StorageRepository : IStorageRepository //get files, get scores/time, load game, new time, save game
     {
         private XDocument times;
         private List<string> games;

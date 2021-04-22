@@ -4,6 +4,7 @@
 
 namespace Haunted.GameLogic
 {
+    using Haunted.GameModel;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -36,5 +37,18 @@ namespace Haunted.GameLogic
         /// <param name="mousePos">mouse position.</param>
         /// <returns>point</returns>
         public Point GetTilePos(Point mousePos);
+
+        /// <summary>
+        /// New score adding method.
+        /// </summary>
+        /// <param name="name">Name.</param>
+        /// <param name="time">Score.</param>
+        public void NewTime(string name, TimeSpan time);
+
+        /// <summary>
+        /// Score listing method.
+        /// </summary>
+        /// <returns>A list.</returns>
+        public List<TimeToXML> ListTime();
     }
 }
