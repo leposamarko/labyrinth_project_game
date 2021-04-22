@@ -29,7 +29,7 @@ namespace Haunted.GameModel
         private int lifeCount = 3;
         private int numKey = 4;
 
-        public HauntedModel(double w, double h)
+        public HauntedModel(int w, int h)
         {
             this.Keys = new List<Key>();      //ez a kettő a szellem és kulcs randomizer lenne, egyenlőre ezt így hagyom, passz hogy itt kell e megcsinálni vagy nem
             this.Ghosts = new List<Ghost>();
@@ -37,7 +37,7 @@ namespace Haunted.GameModel
 
             this.Background = new Point[2];
             this.Background[0] = new Point(0, 0);   //ez a 3 bacgroundos még passz hogy mi, egyenlőre itt lesz max áttírjuk ha rájövünk mire jó
-            this.Background[1] = new Point(Config.GameWidth - 1, 0);
+            this.Background[1] = new Point(this.GameWidth - 1, 0);
             this.GameWidth = w;
             this.GameHeight = h;
         }
