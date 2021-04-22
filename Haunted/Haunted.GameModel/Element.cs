@@ -22,6 +22,16 @@ namespace Haunted.GameModel
         protected Rect area;
 
         /// <summary>
+        /// Gets or sets vector of x axis.
+        /// </summary>
+        public int Dx { get; set; }
+
+        /// <summary>
+        /// Gets or sets vector of y axis.
+        /// </summary>
+        public int Dy { get; set; }
+
+        /// <summary>
         /// Gets area.
         /// </summary>
         public Rect Area

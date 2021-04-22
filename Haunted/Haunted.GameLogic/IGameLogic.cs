@@ -15,7 +15,7 @@ namespace Haunted.GameLogic
     /// <summary>
     /// Igame logic.
     /// </summary>
-    internal interface IGameLogic
+    public interface IGameLogic
     {
         /// <summary>
         /// character move method.
