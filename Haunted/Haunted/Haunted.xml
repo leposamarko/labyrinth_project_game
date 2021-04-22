@@ -76,7 +76,7 @@
         </member>
         <member name="T:Haunted.MainWindow">
             <summary>
-            Interaction logic for MainWindow.xaml
+            Interaction logic for MainWindow.xaml.
             </summary>
             <summary>
             MainWindow
