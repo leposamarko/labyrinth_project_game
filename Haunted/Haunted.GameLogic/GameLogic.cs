@@ -18,7 +18,7 @@ namespace Haunted.GameLogic
     /// <summary>
     /// Game logic.
     /// </summary>
-    internal class GameLogic : IGameLogic
+    public class GameLogic : IGameLogic
     {
         private IGameModel model;
         private IStorageRepository repo1;
@@ -34,6 +34,21 @@ namespace Haunted.GameLogic
             this.Initmodel(fname);
             this.repo1 = rep;
         }
+
+        /// <summary>
+        /// RefreshScreen event.
+        /// </summary>
+        public event EventHandler RefreshScreen;
+
+        /// <summary>
+        /// GameOver event.
+        /// </summary>
+        public event EventHandler GameOver;
+
+        /// <summary>
+        /// Pause event.
+        /// </summary>
+        public event EventHandler Pause;
 
         /// <summary>
         /// GetTilePos.
@@ -120,10 +135,22 @@ namespace Haunted.GameLogic
         /// New score adding method.
         /// </summary>
         /// <param name="name">Name.</param>
-        /// <param name="score">Score.</param>
+        /// <param name="time">Score.</param>
         public void NewTime(string name, TimeSpan time)
         {
             this.repo1.NewTime(name, time);
         }
+
+        /*
+        private void MoveGhost()
+        {
+            foreach (Ghost g in this.model.Ghosts)
+            {
+                if (g.Area.IntersectsWith(this.model)){
+
+                }
+            }
+        }
+        */
     }
 }
