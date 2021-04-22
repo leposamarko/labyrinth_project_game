@@ -8,7 +8,7 @@
         Title="LoadGame" Height="720" Width="1280">
     <Grid>
         <Grid.Background>
-            <ImageBrush Stretch="UniformToFill" Viewport="0, 0., 1, 1.2" ImageSource="Images/menu_background.png"></ImageBrush>
+            <ImageBrush Stretch="UniformToFill" Viewport="0, 0., 1, 1.2" ImageSource="Images/menubackground.png"></ImageBrush>
         </Grid.Background>
         <Label FontSize="60" FontWeight="ExtraBold" FontFamily="chiller" Content="List of Saved Games::" HorizontalAlignment="Left" Margin="63,42,0,0" VerticalAlignment="Top" Height="76" Width="560" Background="Gray"/>
 
