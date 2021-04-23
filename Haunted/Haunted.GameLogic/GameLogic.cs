@@ -21,7 +21,7 @@ namespace Haunted.GameLogic
     public class GameLogic : IGameLogic
     {
         private IGameModel model;
-        private IStorageRepository repo1;
+        private IStorageRepository repo;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GameLogic"/> class.
@@ -32,7 +32,7 @@ namespace Haunted.GameLogic
         {
             this.model = model;
             this.Initmodel(fname);
-            this.repo1 = rep;
+            this.repo = rep;
         }
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace Haunted.GameLogic
         /// <returns>A list.</returns>
         public List<TimeToXML> ListTime()
         {
-            return this.repo1.GetTime();
+            return this.repo.GetTime();
         }
 
         /// <summary>
@@ -138,7 +138,7 @@ namespace Haunted.GameLogic
         /// <param name="time">Score.</param>
         public void NewTime(string name, TimeSpan time)
         {
-            this.repo1.NewTime(name, time);
+            this.repo.NewTime(name, time);
         }
 
         /*

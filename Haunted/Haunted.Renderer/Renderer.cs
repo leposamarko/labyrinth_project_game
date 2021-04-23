@@ -26,7 +26,9 @@ namespace Haunted.Renderer
         private Drawing oldExit;
         private Drawing oldPlayer;
         private Drawing oldKey;
-        private Ghost oldGhost;
+        private Drawing oldGhsot;
+        private Drawing oldHeart;
+        private Ghost oldGhostPos;
         private GirlPlayer oldPlayerPosition;
         private Dictionary<string, Brush> brushes = new Dictionary<string, Brush>();
 
@@ -40,9 +42,14 @@ namespace Haunted.Renderer
             this.model = model;
         }
 
+        private Brush HeartBrush
+        {
+            get { return this.GetBrush("Haunted.Images.life_heart.png", false); }
+        }
+
         private Brush KeyBursh
         {
-            get { return this.GetBrush("Haunted.Images.girl_char.png", false); }
+            get { return this.GetBrush("Haunted.Images.gold_key.png", false); }
         }
 
         private Brush GhostBrush
@@ -120,7 +127,7 @@ namespace Haunted.Renderer
         /// Building Drawing method.
         /// </summary>
         /// <returns>drawing.</returns>
-        public Drawing BuildDrawing()
+        private Drawing BuildDrawing()
         {
             DrawingGroup dg = new DrawingGroup();
             dg.Children.Add(this.GetBackgroung());
@@ -128,7 +135,37 @@ namespace Haunted.Renderer
             dg.Children.Add(this.GetExit());
             dg.Children.Add(this.GetPlayer());
             dg.Children.Add(this.GetKeys());
+            dg.Children.Add(this.GetGhosts());
+            dg.Children.Add(this.GetHeart());
             return dg;
+        }
+
+        private Drawing GetHeart()
+        {
+            if (this.oldHeart == null)
+            {
+                Geometry g = new RectangleGeometry(new Rect(0, this.model.GameWidth - 40, this.model.TileSize, this.model.TileSize));
+                this.oldHeart = new GeometryDrawing(this.HeartBrush, null, g);
+            }
+
+            return this.oldHeart;
+        }
+
+        private Drawing GetGhosts()
+        {
+            if (this.oldGhsot == null)
+            {
+                GeometryGroup g = new GeometryGroup();
+                foreach (Ghost gh in this.model.Ghosts)
+                {
+                    Geometry k = new RectangleGeometry(new Rect(gh.Area.X * this.model.TileSize, gh.Area.Y * this.model.TileSize, this.model.TileSize, this.model.TileSize));
+                    g.Children.Add(k);
+                }
+
+                this.oldGhsot = new GeometryDrawing(this.GhostBrush, null, g);
+            }
+
+            return this.oldGhsot;
         }
 
         private Drawing GetKeys()
