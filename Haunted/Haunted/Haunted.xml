@@ -87,5 +87,18 @@
             InitializeComponent
             </summary>
         </member>
+        <member name="T:Haunted.Pause">
+            <summary>
+            Interaction logic for Pause.xaml
+            </summary>
+            <summary>
+            Pause
+            </summary>
+        </member>
+        <member name="M:Haunted.Pause.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
     </members>
 </doc>
