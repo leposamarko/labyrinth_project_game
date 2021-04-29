@@ -78,7 +78,7 @@ namespace Haunted.GameLogic
             {
                 for (int y = 0; y < heigth; y++)
                 {
-                    char current = lines[y+2][x];
+                    char current = lines[y + 2][x];
                     this.model.Walls[x, y] = current == 'w'; // w like wall
                     if (current == 's')
                     {
@@ -123,6 +123,35 @@ namespace Haunted.GameLogic
         }
 
         /// <summary>
+        /// ghost move mehod.
+        /// </summary>
+        /// <param name="g">ghost to move.</param>
+        public void MoveGhost(Ghost g)
+        {
+            if (g.WhichMove.Equals(""))
+            {
+                if (this.model.Walls[(int)g.Area.X, (int)g.Area.Y - 1] && this.model.Walls[(int)g.Area.X, (int)g.Area.Y + 1])
+                {
+                    g.WhichMove = "x";
+                    this.MoveXGhost(g);
+                }
+                else if (this.model.Walls[(int)g.Area.X + 1, (int)g.Area.Y] && this.model.Walls[(int)g.Area.X - 1, (int)g.Area.Y])
+                {
+                    g.WhichMove = "y";
+                    this.MoveYGhost(g);
+                }
+            }
+            else if (g.WhichMove.Equals("x"))
+            {
+                this.MoveXGhost(g);
+            }
+            else
+            {
+                this.MoveYGhost(g);
+            }
+        }
+
+        /// <summary>
         /// Score listing method.
         /// </summary>
         /// <returns>A list.</returns>
@@ -141,16 +170,30 @@ namespace Haunted.GameLogic
             this.repo.NewTime(name, time);
         }
 
-        /*
-        private void MoveGhost()
+        private void MoveXGhost(Ghost g)
         {
-            foreach (Ghost g in this.model.Ghosts)
+            if (this.model.Walls[(int)g.Area.X + (int)g.Movex, (int)g.Area.Y] == false)
             {
-                if (g.Area.IntersectsWith(this.model)){
-
-                }
+                g.ChangeX((int)g.Area.X + g.Movex);
+            }
+            else
+            {
+                g.Movex = -g.Movex;
+                g.ChangeX((int)g.Area.X + g.Movex);
             }
         }
-        */
+
+        private void MoveYGhost(Ghost g)
+        {
+            if (this.model.Walls[(int)g.Area.X, (int)g.Area.Y + (int)g.Movey] == false)
+            {
+                g.ChangeY((int)g.Area.Y + g.Movey);
+            }
+            else
+            {
+                g.Movey = -g.Movey;
+                g.ChangeX((int)g.Area.Y + g.Movey);
+            }
+        }
     }
 }
