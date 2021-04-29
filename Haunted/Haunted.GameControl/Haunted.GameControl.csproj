@@ -24,4 +24,11 @@
 	  </PackageReference>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\Haunted.GameLogic\Haunted.GameLogic.csproj" />
+	  <ProjectReference Include="..\Haunted.GameModel\Haunted.GameModel.csproj" />
+	  <ProjectReference Include="..\Haunted.Renderer\Haunted.Renderer.csproj" />
+	  <ProjectReference Include="..\Haunted.Repository\Haunted.Repository.csproj" />
+	</ItemGroup>
+
 </Project>

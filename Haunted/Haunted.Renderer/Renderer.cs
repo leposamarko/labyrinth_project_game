@@ -127,7 +127,7 @@ namespace Haunted.Renderer
         /// Building Drawing method.
         /// </summary>
         /// <returns>drawing.</returns>
-        private Drawing BuildDrawing()
+        public Drawing BuildDrawing()
         {
             DrawingGroup dg = new DrawingGroup();
             dg.Children.Add(this.GetBackgroung());
