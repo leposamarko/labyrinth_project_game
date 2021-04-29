@@ -78,7 +78,7 @@ namespace Haunted.GameLogic
             {
                 for (int y = 0; y < heigth; y++)
                 {
-                    char current = lines[y+2][x];
+                    char current = lines[y + 2][x];
                     this.model.Walls[x, y] = current == 'w'; // w like wall
                     if (current == 's')
                     {
@@ -117,9 +117,46 @@ namespace Haunted.GameLogic
             if (newx >= 0 && newy > 0 && newx < this.model.Walls.GetLength(0) && newy < this.model.Walls.GetLength(1) && !this.model.Walls[newx, newy])
             {
                 this.model.Player = new GirlPlayer(newx, newy);
+                foreach (Key k in this.model.Keys)
+                {
+                    if (this.model.Player.Area.IntersectsWith(k.Area))
+                    {
+                        this.model.Player.NumbKeys++;
+                        this.model.Keys.Remove(k);
+                    }
+                }
             }
 
-            return this.model.Player.Equals(this.model.Exit);
+            return this.model.Player.Equals(this.model.Exit) && this.model.Player.NumbKeys == 3;
+        }
+
+        /// <summary>
+        /// ghost move mehod.
+        /// </summary>
+        /// <param name="g">ghost to move.</param>
+        public void MoveGhost(Ghost g)
+        {
+            if (g.WhichMove.Equals(""))
+            {
+                if (this.model.Walls[(int)g.Area.X, (int)g.Area.Y - 1] && this.model.Walls[(int)g.Area.X, (int)g.Area.Y + 1])
+                {
+                    g.WhichMove = "x";
+                    this.MoveXGhost(g);
+                }
+                else if (this.model.Walls[(int)g.Area.X + 1, (int)g.Area.Y] && this.model.Walls[(int)g.Area.X - 1, (int)g.Area.Y])
+                {
+                    g.WhichMove = "y";
+                    this.MoveYGhost(g);
+                }
+            }
+            else if (g.WhichMove.Equals("x"))
+            {
+                this.MoveXGhost(g);
+            }
+            else
+            {
+                this.MoveYGhost(g);
+            }
         }
 
         /// <summary>
@@ -141,16 +178,50 @@ namespace Haunted.GameLogic
             this.repo.NewTime(name, time);
         }
 
-        /*
-        private void MoveGhost()
+        private void MoveXGhost(Ghost g)
         {
-            foreach (Ghost g in this.model.Ghosts)
+            if (this.model.Walls[(int)g.Area.X + (int)g.Movex, (int)g.Area.Y] == false)
             {
-                if (g.Area.IntersectsWith(this.model)){
-
+                g.ChangeX((int)g.Area.X + g.Movex);
+                if (g.Area.IntersectsWith(this.model.Player.Area))
+                {
+                    this.model.Player.Life--;
+                    this.MoveXGhost(g);
+                }
+            }
+            else
+            {
+                g.Movex = -g.Movex;
+                g.ChangeX((int)g.Area.X + g.Movex);
+                if (g.Area.IntersectsWith(this.model.Player.Area))
+                {
+                    this.model.Player.Life--;
+                    this.MoveXGhost(g);
                 }
             }
         }
-        */
+
+        private void MoveYGhost(Ghost g)
+        {
+            if (this.model.Walls[(int)g.Area.X, (int)g.Area.Y + (int)g.Movey] == false)
+            {
+                g.ChangeY((int)g.Area.Y + g.Movey);
+                if (g.Area.IntersectsWith(this.model.Player.Area))
+                {
+                    this.model.Player.Life--;
+                    this.MoveYGhost(g);
+                }
+            }
+            else
+            {
+                g.Movey = -g.Movey;
+                g.ChangeX((int)g.Area.Y + g.Movey);
+                if (g.Area.IntersectsWith(this.model.Player.Area))
+                {
+                    this.model.Player.Life--;
+                    this.MoveYGhost(g);
+                }
+            }
+        }
     }
 }

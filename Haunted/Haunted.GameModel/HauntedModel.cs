@@ -29,7 +29,7 @@ namespace Haunted.GameModel
         private int lifeCount = 3;
         private int numKey = 4;
 
-        public HauntedModel(int w, int h)
+        public HauntedModel(double w, double h)
         {
             this.Keys = new List<Key>();      //ez a kettő a szellem és kulcs randomizer lenne, egyenlőre ezt így hagyom, passz hogy itt kell e megcsinálni vagy nem
             this.Ghosts = new List<Ghost>();

@@ -16,6 +16,17 @@ namespace Haunted.GameModel
     /// </summary>
     public class GirlPlayer : Element
     {
+
+        /// <summary>
+        /// number of keys at the player.
+        /// </summary>
+        public int NumbKeys = 0;
+
+        /// <summary>
+        /// number of life.
+        /// </summary>
+        public int Life = 3;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="GirlPlayer"/> class.
         /// </summary>
@@ -30,5 +41,5 @@ namespace Haunted.GameModel
         /// Gets or sets time.
         /// </summary>
         public List<TimeToXML> Times { get; set; }
-    }
+   }
 }
