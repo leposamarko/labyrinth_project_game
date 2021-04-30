@@ -13,7 +13,7 @@ using Haunted.GameModel;
 
 namespace Haunted.GameControl
 {
-    class Control : FrameworkElement
+    public class GControl : FrameworkElement
     {
         Haunted.GameLogic.GameLogic logic;
         Haunted.Renderer.Renderer renderer;
@@ -22,7 +22,7 @@ namespace Haunted.GameControl
         Haunted.Repository.StorageRepository repo;
         DispatcherTimer tickTimer;
 
-        public Control()
+        public GControl()
         {
             this.Loaded += this.Control_Loaded;
         }
@@ -92,6 +92,23 @@ namespace Haunted.GameControl
                 MessageBox.Show("YAY!" + this.stw.Elapsed.ToString(@"hh\:mm\:ss\.fff"));
 
             }
+        }
+
+        /// <summary>
+        /// Save game method.
+        /// </summary>
+        /// <param name="gameName">A string.</param>
+        public void SaveGame(string gameName)
+        {
+            this.repo.SaveGame(gameName, this.model);
+        }
+
+        /// <summary>
+        /// Continue method.
+        /// </summary>
+        public void Continue()
+        {
+            this.tickTimer.IsEnabled = true;
         }
     }
 }
