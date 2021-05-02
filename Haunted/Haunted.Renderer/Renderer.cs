@@ -153,8 +153,8 @@ namespace Haunted.Renderer
 
         private Drawing GetGhosts()
         {
-            if (this.oldGhsot == null)
-            {
+         // if (this.oldGhsot == null)
+         //   {
                 GeometryGroup g = new GeometryGroup();
                 foreach (Ghost gh in this.model.Ghosts)
                 {
@@ -163,9 +163,9 @@ namespace Haunted.Renderer
                 }
 
                 this.oldGhsot = new GeometryDrawing(this.GhostBrush, null, g);
-            }
 
-            return this.oldGhsot;
+            // }
+                return this.oldGhsot;
         }
 
         private Drawing GetKeys()
