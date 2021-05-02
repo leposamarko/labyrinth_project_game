@@ -8,8 +8,7 @@
         Title="Pause" Height="720" Width="1280">
     <Grid Background="Gray">
         <Label Content="GAME PAUSED" FontWeight="ExtraBold" FontFamily="chiller" FontSize="160" Background="Transparent" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,40,0,0" VerticalAlignment="Top" RenderTransformOrigin="11.711,3.231" Height="184" Width="966"/>
-        <Button Click="SaveGame" Background="Transparent" FontSize="110" FontWeight="ExtraBold" FontFamily="chiller" Content="Save Game" HorizontalAlignment="Center" Margin="0,396,0,0" VerticalAlignment="Top" Height="123" Width="414"/>
-        <Button Click="BackToMenu" Background="Transparent" FontSize="110" FontWeight="ExtraBold" FontFamily="chiller" Content="Back" HorizontalAlignment="Center" Margin="0,542,0,0" VerticalAlignment="Top" Height="124" Width="200"/>
-        <Button Click="ContinueGame" Background="Transparent" FontSize="110" FontWeight="ExtraBold" FontFamily="chiller" Content="Continue Game" HorizontalAlignment="Center" Margin="0,229,0,0" VerticalAlignment="Top" Height="123" Width="598"/>
+        <Button Click="SaveGame" Background="Transparent" FontSize="110" FontWeight="ExtraBold" FontFamily="chiller" Content="Save Game" HorizontalAlignment="Center" Margin="0,493,0,0" VerticalAlignment="Top" Height="123" Width="414"/>
+        <Button Click="ContinueGame" Background="Transparent" FontSize="110" FontWeight="ExtraBold" FontFamily="chiller" Content="Continue Game" HorizontalAlignment="Center" Margin="0,312,0,0" VerticalAlignment="Top" Height="123" Width="598"/>
     </Grid>
 </Window>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Haunted.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,12 +22,16 @@ namespace Haunted
     {
         public LeaderBoard()
         {
-            InitializeComponent();
+            this.InitializeComponent();
+            var repo = new StorageRepository();
+            this.scores.ItemsSource = repo.GetTime();
         }
 
         private void Back(object sender, RoutedEventArgs e)
         {
-
+            MainWindow m = new MainWindow();
+            m.Show();
+            Window.GetWindow(this).Close();
         }
     }
 }

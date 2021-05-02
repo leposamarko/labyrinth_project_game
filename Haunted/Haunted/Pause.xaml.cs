@@ -17,6 +17,7 @@ namespace Haunted
     using System.Windows.Media;
     using System.Windows.Media.Imaging;
     using System.Windows.Shapes;
+    using Haunted.GameControl;
 
     /// <summary>
     /// Interaction logic for Pause.xaml.
@@ -33,17 +34,14 @@ namespace Haunted
 
         private void SaveGame(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void BackToMenu(object sender, RoutedEventArgs e)
-        {
-
+            (this.DataContext as GControl).SaveGame(/*valahogy a choose a characterből áthozni*/);
+            MessageBox.Show("Game Saved!", "Saved", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void ContinueGame(object sender, RoutedEventArgs e)
         {
-
+            (this.DataContext as GControl).Continue();
+            Window.GetWindow(this).Close();
         }
     }
 }

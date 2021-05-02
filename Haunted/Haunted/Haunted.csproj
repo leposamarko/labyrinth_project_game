@@ -48,6 +48,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Haunted.GameControl\Haunted.GameControl.csproj" />
+    <ProjectReference Include="..\Haunted.Repository\Haunted.Repository.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Images\blue_key.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>

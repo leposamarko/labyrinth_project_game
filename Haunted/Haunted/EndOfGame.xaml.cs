@@ -15,23 +15,25 @@ using System.Windows.Shapes;
 namespace Haunted
 {
     /// <summary>
-    /// Interaction logic for EndOfGame.xaml
+    /// Interaction logic for EndOfGame.xaml.
     /// </summary>
     public partial class EndOfGame : Window
     {
         public EndOfGame()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
 
         private void Retry(object sender, RoutedEventArgs e)
         {
-
+            MainWindow m = new MainWindow();
+            m.Show();
+            Window.GetWindow(this).Close();
         }
 
         private void ExitToMain(object sender, RoutedEventArgs e)
         {
-
+            System.Environment.Exit(1);
         }
     }
 }
