@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Haunted.GameLogic</name>
+    </assembly>
+    <members>
+        <member name="T:Haunted.GameLogic.GameLogic">
+            <summary>
+            Game logic.
+            </summary>
+        </member>
+        <member name="M:Haunted.GameLogic.GameLogic.#ctor(Haunted.GameModel.HauntedModel,System.String,Haunted.Repository.IStorageRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Haunted.GameLogic.GameLogic"/> class.
+            </summary>
+            <param name="model">modle.</param>
+            <param name="fname">fname.</param>
+        </member>
+        <member name="E:Haunted.GameLogic.GameLogic.RefreshScreen">
+            <summary>
+            RefreshScreen event.
+            </summary>
+        </member>
+        <member name="E:Haunted.GameLogic.GameLogic.GameOver">
+            <summary>
+            GameOver event.
+            </summary>
+        </member>
+        <member name="E:Haunted.GameLogic.GameLogic.Pause">
+            <summary>
+            Pause event.
+            </summary>
+        </member>
+        <member name="M:Haunted.GameLogic.GameLogic.GetTilePos(System.Windows.Point)">
+            <summary>
+            GetTilePos.
+            </summary>
+            <param name="mousePos">mousepos.</param>
+            <returns>point.</returns>
+        </member>
+        <member name="M:Haunted.GameLogic.GameLogic.Initmodel(System.String)">
+            <summary>
+            initmodel.
+            </summary>
+            <param name="fname">file name of mapp.</param>
+        </member>
+        <member name="M:Haunted.GameLogic.GameLogic.Move(System.Int32,System.Int32)">
+            <summary>
+            move character method.
+            </summary>
+            <param name="dx">dx.</param>
+            <param name="dy">dy.</param>
+            <returns>is end.</returns>
+        </member>
+        <member name="M:Haunted.GameLogic.GameLogic.MoveGhost(Haunted.GameModel.Ghost)">
+            <summary>
+            ghost move mehod.
+            </summary>
+            <param name="g">ghost to move.</param>
+        </member>
+        <member name="M:Haunted.GameLogic.GameLogic.ListTime">
+            <summary>
+            Score listing method.
+            </summary>
+            <returns>A list.</returns>
+        </member>
+        <member name="M:Haunted.GameLogic.GameLogic.NewTime(System.String,System.TimeSpan)">
+            <summary>
+            New score adding method.
+            </summary>
+            <param name="name">Name.</param>
+            <param name="time">Score.</param>
+        </member>
+        <member name="T:Haunted.GameLogic.IGameLogic">
+            <summary>
+            Igame logic.
+            </summary>
+        </member>
+        <member name="M:Haunted.GameLogic.IGameLogic.Move(System.Int32,System.Int32)">
+            <summary>
+            character move method.
+            </summary>
+            <param name="dx">x coordinate.</param>
+            <param name="dy">y coordinate.</param>
+            <returns>can moove.</returns>
+        </member>
+        <member name="M:Haunted.GameLogic.IGameLogic.Initmodel(System.String)">
+            <summary>
+            initmodel.
+            </summary>
+            <param name="fname">file name.</param>
+        </member>
+        <member name="M:Haunted.GameLogic.IGameLogic.GetTilePos(System.Windows.Point)">
+            <summary>
+            get the position to title.
+            </summary>
+            <param name="mousePos">mouse position.</param>
+            <returns>point</returns>
+        </member>
+        <member name="M:Haunted.GameLogic.IGameLogic.NewTime(System.String,System.TimeSpan)">
+            <summary>
+            New score adding method.
+            </summary>
+            <param name="name">Name.</param>
+            <param name="time">Score.</param>
+        </member>
+        <member name="M:Haunted.GameLogic.IGameLogic.ListTime">
+            <summary>
+            Score listing method.
+            </summary>
+            <returns>A list.</returns>
+        </member>
+    </members>
+</doc>

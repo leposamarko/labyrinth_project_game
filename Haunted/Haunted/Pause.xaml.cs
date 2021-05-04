@@ -34,7 +34,7 @@ namespace Haunted
 
         private void SaveGame(object sender, RoutedEventArgs e)
         {
-            (this.DataContext as GControl).SaveGame(/*valahogy a choose a characterből áthozni*/);
+            (this.DataContext as GControl).SaveGame("name"/*valahogy a choose a characterből áthozni*/);
             MessageBox.Show("Game Saved!", "Saved", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 

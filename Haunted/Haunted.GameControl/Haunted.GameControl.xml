@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Haunted.GameControl</name>
+    </assembly>
+    <members>
+        <member name="M:Haunted.GameControl.GControl.SaveGame(System.String)">
+            <summary>
+            Save game method.
+            </summary>
+            <param name="gameName">A string.</param>
+        </member>
+        <member name="M:Haunted.GameControl.GControl.Continue">
+            <summary>
+            Continue method.
+            </summary>
+        </member>
+    </members>
+</doc>
