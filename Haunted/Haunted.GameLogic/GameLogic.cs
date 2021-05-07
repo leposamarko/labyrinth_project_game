@@ -80,22 +80,22 @@ namespace Haunted.GameLogic
                 {
                     char current = lines[y + 2][x];
                     this.model.Walls[x, y] = current == 'w'; // w like wall
-                    if (current == 's')
+                    if (current == 'S')
                     {
                         this.model.Player = new GirlPlayer(x, y); // s like start
                     }
 
-                    if (current == 'e')
+                    if (current == 'E')
                     {
                         this.model.Exit = new Point(x, y); // e like exit
                     }
 
-                    if (current == 'g')
+                    if (current == 'G')
                     {
                         this.model.Ghosts.Add(new Ghost(x, y)); // g like gost
                     }
 
-                    if (current == 'k')
+                    if (current == 'K')
                     {
                         this.model.Keys.Add(new Key(x, y)); // k like key
                     }
