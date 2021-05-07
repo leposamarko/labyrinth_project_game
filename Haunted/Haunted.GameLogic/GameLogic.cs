@@ -21,14 +21,14 @@ namespace Haunted.GameLogic
     public class GameLogic : IGameLogic
     {
         private IGameModel model;
-        private IStorageRepository repo;
+        private StorageRepository repo;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GameLogic"/> class.
         /// </summary>
         /// <param name="model">modle.</param>
         /// <param name="fname">fname.</param>
-        public GameLogic(HauntedModel model, string fname, IStorageRepository rep)
+        public GameLogic(HauntedModel model, string fname, StorageRepository rep)
         {
             this.model = model;
             this.Initmodel(fname);

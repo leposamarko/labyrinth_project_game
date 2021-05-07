@@ -17,7 +17,13 @@ namespace Haunted.Repository
 
         public StorageRepository()
         {
-            this.times = XDocument.Load("times.xml");
+            if (this.times == null)
+            {
+            }
+            else
+            {
+                this.times = XDocument.Load("times.xml");
+            }
             this.games = this.GetFiles();
         }
         public List<string> GetFiles()

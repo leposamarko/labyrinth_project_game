@@ -16,9 +16,9 @@ using System.Windows.Shapes;
 namespace Haunted
 {
     /// <summary>
-    /// Interaction logic for LoadGame.xaml
+    /// Interaction logic for LoadGame.xaml.
     /// </summary>
-    public partial class LoadGame : Window
+    public partial class LoadGame : Page
     {
         public LoadGame()
         {

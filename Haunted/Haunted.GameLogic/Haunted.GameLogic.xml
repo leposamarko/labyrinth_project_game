@@ -9,7 +9,7 @@
             Game logic.
             </summary>
         </member>
-        <member name="M:Haunted.GameLogic.GameLogic.#ctor(Haunted.GameModel.HauntedModel,System.String,Haunted.Repository.IStorageRepository)">
+        <member name="M:Haunted.GameLogic.GameLogic.#ctor(Haunted.GameModel.HauntedModel,System.String,Haunted.Repository.StorageRepository)">
             <summary>
             Initializes a new instance of the <see cref="T:Haunted.GameLogic.GameLogic"/> class.
             </summary>

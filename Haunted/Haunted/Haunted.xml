@@ -24,7 +24,7 @@
         </member>
         <member name="T:Haunted.ChooseCharacter">
             <summary>
-            Interaction logic for ChooseCharacter.xaml
+            Interaction logic for ChooseCharacter.xaml.
             </summary>
             <summary>
             ChooseCharacter
@@ -50,7 +50,7 @@
         </member>
         <member name="T:Haunted.LeaderBoard">
             <summary>
-            Interaction logic for LeaderBoard.xaml
+            Interaction logic for LeaderBoard.xaml.
             </summary>
             <summary>
             LeaderBoard
@@ -63,7 +63,7 @@
         </member>
         <member name="T:Haunted.LoadGame">
             <summary>
-            Interaction logic for LoadGame.xaml
+            Interaction logic for LoadGame.xaml.
             </summary>
             <summary>
             LoadGame

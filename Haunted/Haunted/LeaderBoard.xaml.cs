@@ -16,9 +16,9 @@ using System.Windows.Shapes;
 namespace Haunted
 {
     /// <summary>
-    /// Interaction logic for LeaderBoard.xaml
+    /// Interaction logic for LeaderBoard.xaml.
     /// </summary>
-    public partial class LeaderBoard : Window
+    public partial class LeaderBoard : Page
     {
         public LeaderBoard()
         {
