@@ -23,7 +23,7 @@ namespace Haunted.GameControl
         DispatcherTimer tickTimer;
 
         public GControl()
-        {
+        { 
             this.Loaded += this.Control_Loaded;
         }
 
