@@ -31,6 +31,8 @@ namespace Haunted.Renderer
 
         // private Ghost oldGhostPos;
         private GirlPlayer oldPlayerPosition;
+        private int girx;
+        private int giry;
         private Dictionary<string, Brush> brushes = new Dictionary<string, Brush>();
 
         /// <summary>
@@ -63,7 +65,7 @@ namespace Haunted.Renderer
         /// </summary>
         private Brush PlayerBrush
         {
-            get { return this.GetBrush("Haunted.Haunted.Images.girl_char.png", false); }
+            get { return this.GetBrush("Haunted.Images.girl_char.png", false); }
         }
 
         /// <summary>
@@ -71,7 +73,7 @@ namespace Haunted.Renderer
         /// </summary>
         private Brush ExitBrush
         {
-            get { return this.GetBrush("Haunted.Haunted.Images.exit.png", false); }
+            get { return this.GetBrush("Haunted.Images.exit.bmp", false); }
         }
 
         /// <summary>
@@ -79,7 +81,7 @@ namespace Haunted.Renderer
         /// </summary>
         private Brush WallBrush
         {
-            get { return this.GetBrush("Haunted.Haunted.Images.sidewalk_base.png", true); }
+            get { return this.GetBrush("Haunted.Images.sidewalk_base.png", true); }
         }
 
         /// <summary>
@@ -124,7 +126,7 @@ namespace Haunted.Renderer
             {
                 BitmapImage bmp = new BitmapImage();
                 bmp.BeginInit();
-                bmp.StreamSource = Assembly.GetExecutingAssembly().GetManifestResourceStream(fname);
+                bmp.StreamSource = Assembly.GetEntryAssembly().GetManifestResourceStream(fname);
                 bmp.EndInit();
                 ImageBrush ib = new ImageBrush(bmp);
 
@@ -188,12 +190,14 @@ namespace Haunted.Renderer
 
         private Drawing GetPlayer()
         {
-            if (this.oldPlayer == null || this.oldPlayerPosition.Area != this.model.Player.Area)
+            if (this.oldPlayer == null || this.girx != this.model.Player.Area.X || this.giry != this.model.Player.Area.Y) // this.oldPlayerPosition.Area != this.model.Player.Area)
             {
                 Geometry g = new RectangleGeometry(new Rect(this.model.Player.Area.X * this.model.TileSize, this.model.Player.Area.Y * this.model.TileSize, this.model.TileSize, this.model.TileSize));
                 this.oldPlayer = new GeometryDrawing(this.PlayerBrush, null, g);
-                this.oldPlayerPosition.ChangeX((int)this.model.Player.Area.X);
-                this.oldPlayerPosition.ChangeY((int)this.model.Player.Area.Y);
+                // this.oldPlayerPosition.ChangeX((int)this.model.Player.Area.X);
+                this.girx = (int)this.model.Player.Area.X;
+                this.giry = (int)this.model.Player.Area.Y;
+                // this.oldPlayerPosition.ChangeY((int)this.model.Player.Area.Y);
             }
 
             return this.oldPlayer;

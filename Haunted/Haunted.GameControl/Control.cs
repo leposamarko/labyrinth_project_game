@@ -31,6 +31,8 @@ namespace Haunted.GameControl
         /// </summary>
         public GControl()
         {
+<<<<<<< HEAD
+=======
             this.Loaded += this.Control_Loaded;
         }
 
@@ -40,6 +42,7 @@ namespace Haunted.GameControl
         /// <param name="playerName">A string.</param>
         public GControl(string playerName)
         {
+>>>>>>> 40d28660a97f5bdbafdb2e29ddb8e9501eaa2420
             this.Loaded += this.Control_Loaded;
             this.currentPlayerName = playerName;
         }
@@ -106,7 +109,7 @@ namespace Haunted.GameControl
         {
             foreach (Ghost g in this.model.Ghosts)
             {
-                this.logic.MoveGhost(g);
+                 this.logic.MoveGhost(g);
             }
         }
 
