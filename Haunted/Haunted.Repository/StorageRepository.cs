@@ -1,20 +1,28 @@
-﻿using Haunted.GameModel;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
+﻿// <copyright file="StorageRepository.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace Haunted.Repository
 {
-    public class StorageRepository : IStorageRepository //get files, get scores/time, load game, new time, save game
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using System.Xml.Linq;
+    using Haunted.GameModel;
+    using Newtonsoft.Json;
+
+    /// <summary>
+    /// Storage Repository.
+    /// </summary>
+    public class StorageRepository : IStorageRepository // get files, get scores/time, load game, new time, save game
     {
         private XDocument times;
         private List<string> games;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StorageRepository"/> class.
+        /// </summary>
         public StorageRepository()
         {
             if (this.times == null)
@@ -24,8 +32,14 @@ namespace Haunted.Repository
             {
                 this.times = XDocument.Load("times.xml");
             }
+
             this.games = this.GetFiles();
         }
+
+        /// <summary>
+        /// To get the files froma json.
+        /// </summary>
+        /// <returns>A list.</returns>
         public List<string> GetFiles()
         {
             var files = Directory.GetFiles(Directory.GetCurrentDirectory(), "*.json").ToList();
@@ -39,6 +53,7 @@ namespace Haunted.Repository
             return names;
         }
 
+        /// <inheritdoc/>
         public List<TimeToXML> GetTime()
         {
             List<TimeToXML> time = new List<TimeToXML>();
@@ -50,6 +65,7 @@ namespace Haunted.Repository
             return inOrder;
         }
 
+        /// <inheritdoc/>
         public HauntedModel LoadGame(string name)
         {
             HauntedModel model;
@@ -61,6 +77,7 @@ namespace Haunted.Repository
             return model;
         }
 
+        /// <inheritdoc/>
         public void NewTime(string name, TimeSpan time)
         {
             if (this.times == null)
@@ -79,6 +96,7 @@ namespace Haunted.Repository
             }
         }
 
+        /// <inheritdoc/>
         public void SaveGame(string name, IGameModel model)
         {
             var fileName = name + ".json";

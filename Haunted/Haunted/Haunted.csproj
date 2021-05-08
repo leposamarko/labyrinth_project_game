@@ -33,13 +33,21 @@
     <None Remove="Images\right_upp_corner.png" />
     <None Remove="Images\sidewalk_base.png" />
     <None Remove="Images\vertical_wall.png" />
+<<<<<<< HEAD
     <None Remove="map\L02.lvl" />
+=======
+    <None Remove="map\L04.lvl" />
+>>>>>>> 40d28660a97f5bdbafdb2e29ddb8e9501eaa2420
     <None Remove="map\lab.lvl" />
   </ItemGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <EmbeddedResource Include="Images\exit.bmp" />
     <EmbeddedResource Include="map\L02.lvl" />
+=======
+    <EmbeddedResource Include="map\L04.lvl" />
+>>>>>>> 40d28660a97f5bdbafdb2e29ddb8e9501eaa2420
     <EmbeddedResource Include="map\lab.lvl" />
   </ItemGroup>
 

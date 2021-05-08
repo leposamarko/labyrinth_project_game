@@ -42,7 +42,7 @@
             <summary>
             initmodel.
             </summary>
-            <param name="fname">file name of mapp.</param>
+            <param name="fname">file name of map.</param>
         </member>
         <member name="M:Haunted.GameLogic.GameLogic.Move(System.Int32,System.Int32)">
             <summary>

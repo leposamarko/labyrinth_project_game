@@ -28,7 +28,8 @@ namespace Haunted.Renderer
         private Drawing oldKey;
         private Drawing oldGhsot;
         private Drawing oldHeart;
-        private Ghost oldGhostPos;
+
+        // private Ghost oldGhostPos;
         private GirlPlayer oldPlayerPosition;
         private int girx;
         private int giry;
@@ -97,6 +98,23 @@ namespace Haunted.Renderer
         }
 
         /// <summary>
+        /// Building Drawing method.
+        /// </summary>
+        /// <returns>drawing.</returns>
+        public Drawing BuildDrawing()
+        {
+            DrawingGroup dg = new DrawingGroup();
+            dg.Children.Add(this.GetBackgroung());
+            dg.Children.Add(this.GetWalls());
+            dg.Children.Add(this.GetExit());
+            dg.Children.Add(this.GetPlayer());
+            dg.Children.Add(this.GetKeys());
+            dg.Children.Add(this.GetGhosts());
+            dg.Children.Add(this.GetHeart());
+            return dg;
+        }
+
+        /// <summary>
         /// GetBrush method.
         /// </summary>
         /// <param name="fname">image file name.</param>
@@ -123,23 +141,6 @@ namespace Haunted.Renderer
             }
 
             return this.brushes[fname];
-        }
-
-        /// <summary>
-        /// Building Drawing method.
-        /// </summary>
-        /// <returns>drawing.</returns>
-        public Drawing BuildDrawing()
-        {
-            DrawingGroup dg = new DrawingGroup();
-            dg.Children.Add(this.GetBackgroung());
-            dg.Children.Add(this.GetWalls());
-            dg.Children.Add(this.GetExit());
-            dg.Children.Add(this.GetPlayer());
-            dg.Children.Add(this.GetKeys());
-            dg.Children.Add(this.GetGhosts());
-            dg.Children.Add(this.GetHeart());
-            return dg;
         }
 
         private Drawing GetHeart()

@@ -4,6 +4,19 @@
         <name>Haunted.GameControl</name>
     </assembly>
     <members>
+        <member name="M:Haunted.GameControl.GControl.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Haunted.GameControl.GControl"/> class.
+            </summary>
+            <param name="playerName">A string.</param>
+        </member>
+        <member name="M:Haunted.GameControl.GControl.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Haunted.GameControl.GControl"/> class.
+            </summary>
+            <param name="playerName">A playername string.</param>
+            <param name="fileName">A filename string.</param>
+        </member>
         <member name="M:Haunted.GameControl.GControl.SaveGame(System.String)">
             <summary>
             Save game method.
