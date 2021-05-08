@@ -66,8 +66,6 @@ namespace Haunted.GameLogic
         /// <param name="fname">file name of mapp.</param>
         public void Initmodel(string fname)
         {
-            // Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(fname);
-            // StreamReader sr = new StreamReader(stream);
             Stream stream = Assembly.GetEntryAssembly().GetManifestResourceStream(fname);
             StreamReader sr = new StreamReader(stream);
             string[] lines = sr.ReadToEnd().Replace("\r", string.Empty).Split('\n');
