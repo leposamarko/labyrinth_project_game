@@ -23,7 +23,7 @@ namespace Haunted.GameControl
         DispatcherTimer tickTimer;
 
         public GControl()
-        { 
+        {
             this.Loaded += this.Control_Loaded;
         }
 
@@ -54,7 +54,7 @@ namespace Haunted.GameControl
         {
             foreach (Ghost g in this.model.Ghosts)
             {
-                this.logic.MoveGhost(g);
+                 this.logic.MoveGhost(g);
             }
         }
 

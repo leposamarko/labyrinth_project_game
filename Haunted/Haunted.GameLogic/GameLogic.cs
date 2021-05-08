@@ -66,7 +66,9 @@ namespace Haunted.GameLogic
         /// <param name="fname">file name of mapp.</param>
         public void Initmodel(string fname)
         {
-            Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(fname);
+            // Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(fname);
+            // StreamReader sr = new StreamReader(stream);
+            Stream stream = Assembly.GetEntryAssembly().GetManifestResourceStream(fname);
             StreamReader sr = new StreamReader(stream);
             string[] lines = sr.ReadToEnd().Replace("\r", string.Empty).Split('\n');
 
@@ -117,12 +119,16 @@ namespace Haunted.GameLogic
             if (newx >= 0 && newy > 0 && newx < this.model.Walls.GetLength(0) && newy < this.model.Walls.GetLength(1) && !this.model.Walls[newx, newy])
             {
                 this.model.Player = new GirlPlayer(newx, newy);
-                foreach (Key k in this.model.Keys)
+                if (this.model.Keys != null)
                 {
-                    if (this.model.Player.Area.IntersectsWith(k.Area))
+                    foreach (Key k in this.model.Keys)
                     {
-                        this.model.Player.NumbKeys++;
-                        this.model.Keys.Remove(k);
+                        if (this.model.Player.Area.IntersectsWith(k.Area))
+                        {
+                            this.model.Player.NumbKeys++;
+                            this.model.Keys.Remove(k);
+                            break;
+                        }
                     }
                 }
             }
@@ -182,21 +188,21 @@ namespace Haunted.GameLogic
         {
             if (this.model.Walls[(int)g.Area.X + (int)g.Movex, (int)g.Area.Y] == false)
             {
-                g.ChangeX((int)g.Area.X + g.Movex);
+                g.ChangeX(g.Movex);
                 if (g.Area.IntersectsWith(this.model.Player.Area))
                 {
                     this.model.Player.Life--;
-                    this.MoveXGhost(g);
+                    // this.MoveXGhost(g);
                 }
             }
             else
             {
                 g.Movex = -g.Movex;
-                g.ChangeX((int)g.Area.X + g.Movex);
+                g.ChangeX(g.Movex);
                 if (g.Area.IntersectsWith(this.model.Player.Area))
                 {
                     this.model.Player.Life--;
-                    this.MoveXGhost(g);
+                    // this.MoveXGhost(g);
                 }
             }
         }
@@ -205,7 +211,7 @@ namespace Haunted.GameLogic
         {
             if (this.model.Walls[(int)g.Area.X, (int)g.Area.Y + (int)g.Movey] == false)
             {
-                g.ChangeY((int)g.Area.Y + g.Movey);
+                g.ChangeY(g.Movey);
                 if (g.Area.IntersectsWith(this.model.Player.Area))
                 {
                     this.model.Player.Life--;
@@ -215,7 +221,7 @@ namespace Haunted.GameLogic
             else
             {
                 g.Movey = -g.Movey;
-                g.ChangeX((int)g.Area.Y + g.Movey);
+                g.ChangeX(g.Movey);
                 if (g.Area.IntersectsWith(this.model.Player.Area))
                 {
                     this.model.Player.Life--;

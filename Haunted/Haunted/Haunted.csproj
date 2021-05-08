@@ -13,6 +13,7 @@
   <ItemGroup>
     <None Remove="Images\blue_key.png" />
     <None Remove="Images\end.png" />
+    <None Remove="Images\exit.bmp" />
     <None Remove="Images\ghost.png" />
     <None Remove="Images\girl_char.png" />
     <None Remove="Images\girl_dead.png" />
@@ -32,6 +33,14 @@
     <None Remove="Images\right_upp_corner.png" />
     <None Remove="Images\sidewalk_base.png" />
     <None Remove="Images\vertical_wall.png" />
+    <None Remove="map\L02.lvl" />
+    <None Remove="map\lab.lvl" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Images\exit.bmp" />
+    <EmbeddedResource Include="map\L02.lvl" />
+    <EmbeddedResource Include="map\lab.lvl" />
   </ItemGroup>
 
   <ItemGroup>
@@ -59,18 +68,18 @@
     <Resource Include="Images\end.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\ghost.png">
+    <EmbeddedResource Include="Images\ghost.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\girl_char.png">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\girl_char.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
+    </EmbeddedResource>
     <Resource Include="Images\girl_dead.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\gold_key.png">
+    <EmbeddedResource Include="Images\gold_key.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
+    </EmbeddedResource>
     <Resource Include="Images\grass_base.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
@@ -92,9 +101,9 @@
     <Resource Include="Images\left_upp_corner.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\life_heart.png">
+    <EmbeddedResource Include="Images\life_heart.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
+    </EmbeddedResource>
     <Resource Include="Images\menubackground.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
@@ -107,9 +116,9 @@
     <Resource Include="Images\right_upp_corner.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\sidewalk_base.png">
+    <EmbeddedResource Include="Images\sidewalk_base.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
+    </EmbeddedResource>
     <Resource Include="Images\vertical_wall.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
