@@ -32,6 +32,13 @@
     <None Remove="Images\right_upp_corner.png" />
     <None Remove="Images\sidewalk_base.png" />
     <None Remove="Images\vertical_wall.png" />
+    <None Remove="map\L04.lvl" />
+    <None Remove="map\lab.lvl" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="map\L04.lvl" />
+    <EmbeddedResource Include="map\lab.lvl" />
   </ItemGroup>
 
   <ItemGroup>

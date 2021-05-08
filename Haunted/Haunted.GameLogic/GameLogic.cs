@@ -63,7 +63,7 @@ namespace Haunted.GameLogic
         /// <summary>
         /// initmodel.
         /// </summary>
-        /// <param name="fname">file name of mapp.</param>
+        /// <param name="fname">file name of map.</param>
         public void Initmodel(string fname)
         {
             Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(fname);

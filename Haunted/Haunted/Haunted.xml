@@ -110,5 +110,18 @@
             InitializeComponent
             </summary>
         </member>
+        <member name="T:Haunted.TheGame">
+            <summary>
+            Interaction logic for TheGame.xaml.
+            </summary>
+            <summary>
+            TheGame
+            </summary>
+        </member>
+        <member name="M:Haunted.TheGame.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
     </members>
 </doc>

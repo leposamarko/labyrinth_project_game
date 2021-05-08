@@ -34,7 +34,7 @@ namespace Haunted
         {
             if (this.playerName.Text != string.Empty)
             {
-                Application.Current.MainWindow.Content = new GControl();
+                Application.Current.MainWindow.Content = new TheGame();
             }
             else
             {

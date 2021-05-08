@@ -1,18 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Threading;
-using Haunted.GameLogic;
-using Haunted.GameModel;
+﻿// <copyright file="Control.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace Haunted.GameControl
 {
+    using System;
+    using System.Diagnostics;
+    using System.Windows;
+    using System.Windows.Input;
+    using System.Windows.Media;
+    using System.Windows.Threading;
+    using Haunted.GameModel;
+
+    /// <summary>
+    /// 
+    /// </summary>
     public class GControl : FrameworkElement
     {
         Haunted.GameLogic.GameLogic logic;
@@ -21,10 +23,37 @@ namespace Haunted.GameControl
         Stopwatch stw;
         Haunted.Repository.StorageRepository repo;
         DispatcherTimer tickTimer;
+        private string currentPlayerName;
+        private string currentFileName;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GControl"/> class.
+        /// </summary>
         public GControl()
-        { 
+        {
             this.Loaded += this.Control_Loaded;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GControl"/> class.
+        /// </summary>
+        /// <param name="playerName">A string.</param>
+        public GControl(string playerName)
+        {
+            this.Loaded += this.Control_Loaded;
+            this.currentPlayerName = playerName;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GControl"/> class.
+        /// </summary>
+        /// <param name="playerName">A playername string.</param>
+        /// <param name="fileName">A filename string.</param>
+        public GControl(string playerName, string fileName)
+        {
+            this.currentPlayerName = playerName;
+            this.currentFileName = fileName;
+            this.Loaded += this.Control_LoadFile;
         }
 
         private void Control_Loaded(object sender, RoutedEventArgs e)
@@ -32,7 +61,30 @@ namespace Haunted.GameControl
             this.stw = new Stopwatch();
             this.model = new GameModel.HauntedModel(this.ActualWidth, this.ActualHeight);
             this.repo = new Repository.StorageRepository();
-            this.logic = new GameLogic.GameLogic(this.model, "Haunted.map.lab.lvl", this.repo);
+            this.logic = new GameLogic.GameLogic(this.model, "Haunted.Haunted.map.lab.lvl", this.repo);
+            this.renderer = new Renderer.Renderer(this.model);
+
+            Window win = Window.GetWindow(this);
+            if (win != null)
+            {
+                this.tickTimer = new DispatcherTimer();
+                this.tickTimer.Interval = TimeSpan.FromMilliseconds(40);
+                this.tickTimer.Tick += this.TickTimer_Tick;
+                this.tickTimer.Start();
+                win.KeyDown += this.Win_KeyDown;
+                this.MouseDown += this.Control_MouseDown;
+            }
+
+            this.InvalidateVisual();
+            this.stw.Start();
+        }
+
+        private void Control_LoadFile(object sender, RoutedEventArgs e)
+        {
+            this.stw = new Stopwatch();
+            this.model = this.repo.LoadGame(this.currentFileName);
+            this.repo = new Repository.StorageRepository();
+            this.logic = new GameLogic.GameLogic(this.model, "Haunted.Haunted.map.lab.lvl", this.repo);
             this.renderer = new Renderer.Renderer(this.model);
 
             Window win = Window.GetWindow(this);
@@ -58,6 +110,7 @@ namespace Haunted.GameControl
             }
         }
 
+        /// <inheritdoc/>
         protected override void OnRender(DrawingContext drawingContext)
         {
             if (this.renderer != null)
