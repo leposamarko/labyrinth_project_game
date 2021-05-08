@@ -1,25 +1,21 @@
-﻿using Haunted.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿// <copyright file="LeaderBoard.xaml.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace Haunted
 {
+    using System.Windows;
+    using System.Windows.Controls;
+    using Haunted.Repository;
+
     /// <summary>
     /// Interaction logic for LeaderBoard.xaml.
     /// </summary>
     public partial class LeaderBoard : Page
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LeaderBoard"/> class.
+        /// </summary>
         public LeaderBoard()
         {
             this.InitializeComponent();

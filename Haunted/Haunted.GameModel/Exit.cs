@@ -1,13 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿// <copyright file="Exit.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace Haunted.GameModel
 {
-    class Exit : Element
+    using System.Windows;
+
+    /// <summary>
+    /// The exit.
+    /// </summary>
+    public class Exit : Element
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Exit"/> class.

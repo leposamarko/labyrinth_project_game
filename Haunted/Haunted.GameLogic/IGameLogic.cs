@@ -35,7 +35,7 @@ namespace Haunted.GameLogic
         /// get the position to title.
         /// </summary>
         /// <param name="mousePos">mouse position.</param>
-        /// <returns>point</returns>
+        /// <returns>point.</returns>
         public Point GetTilePos(Point mousePos);
 
         /// <summary>

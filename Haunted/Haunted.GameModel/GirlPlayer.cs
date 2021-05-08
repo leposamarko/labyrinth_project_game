@@ -34,7 +34,7 @@ namespace Haunted.GameModel
         /// <param name="y">y coordinate.</param>
         public GirlPlayer(int x, int y)
         {
-            this.area = new Rect(x, y, Config.PlayerWidth, Config.PlayerHeight); //egyenlőre 0,0 mert nemtudom, hogy kell az indulási helyet beállítani/ranndomizálni.
+            this.area = new Rect(x, y, Config.PlayerWidth, Config.PlayerHeight);
         }
 
         /// <summary>

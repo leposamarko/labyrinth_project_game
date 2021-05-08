@@ -28,6 +28,7 @@ namespace Haunted.GameLogic
         /// </summary>
         /// <param name="model">modle.</param>
         /// <param name="fname">fname.</param>
+        /// <param name="rep">repository.</param>
         public GameLogic(HauntedModel model, string fname, StorageRepository rep)
         {
             this.model = model;
@@ -140,7 +141,7 @@ namespace Haunted.GameLogic
         /// <param name="g">ghost to move.</param>
         public void MoveGhost(Ghost g)
         {
-            if (g.WhichMove.Equals(""))
+            if (g.WhichMove.Equals(string.Empty))
             {
                 if (this.model.Walls[(int)g.Area.X, (int)g.Area.Y - 1] && this.model.Walls[(int)g.Area.X, (int)g.Area.Y + 1])
                 {
@@ -190,6 +191,7 @@ namespace Haunted.GameLogic
                 if (g.Area.IntersectsWith(this.model.Player.Area))
                 {
                     this.model.Player.Life--;
+
                     // this.MoveXGhost(g);
                 }
             }
@@ -200,6 +202,7 @@ namespace Haunted.GameLogic
                 if (g.Area.IntersectsWith(this.model.Player.Area))
                 {
                     this.model.Player.Life--;
+
                     // this.MoveXGhost(g);
                 }
             }

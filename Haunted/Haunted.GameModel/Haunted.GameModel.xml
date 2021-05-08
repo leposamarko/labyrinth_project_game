@@ -97,5 +97,139 @@
             haunted model.
             </summary>
         </member>
+        <member name="T:Haunted.GameModel.IGameModel">
+            <summary>
+            Interface.
+            </summary>
+        </member>
+        <member name="P:Haunted.GameModel.IGameModel.Walls">
+            <summary>
+            Gets or sets wall or not.
+            </summary>
+        </member>
+        <member name="P:Haunted.GameModel.IGameModel.Player">
+            <summary>
+            Gets or sets the player.
+            </summary>
+        </member>
+        <member name="P:Haunted.GameModel.IGameModel.Exit">
+            <summary>
+            Gets or sets the exit.
+            </summary>
+        </member>
+        <member name="P:Haunted.GameModel.IGameModel.Key">
+            <summary>
+            Gets or sets the key.
+            </summary>
+        </member>
+        <member name="P:Haunted.GameModel.IGameModel.GameWidth">
+            <summary>
+            Gets or sets widht.
+            </summary>
+        </member>
+        <member name="P:Haunted.GameModel.IGameModel.GameHeight">
+            <summary>
+            Gets or sets height.
+            </summary>
+        </member>
+        <member name="P:Haunted.GameModel.IGameModel.TileSize">
+            <summary>
+            Gets or sets size of the tile.
+            </summary>
+        </member>
+        <member name="P:Haunted.GameModel.IGameModel.LivesCount">
+            <summary>
+            Gets or sets counting the lives.
+            </summary>
+        </member>
+        <member name="P:Haunted.GameModel.IGameModel.NumGhost">
+            <summary>
+            Gets number of ghosts.
+            </summary>
+        </member>
+        <member name="P:Haunted.GameModel.IGameModel.NumKey">
+            <summary>
+            Gets number of keys.
+            </summary>
+        </member>
+        <member name="P:Haunted.GameModel.IGameModel.Ghosts">
+            <summary>
+            Gets or sets the ghosts.
+            </summary>
+        </member>
+        <member name="P:Haunted.GameModel.IGameModel.Keys">
+            <summary>
+            Gets or sets the keys.
+            </summary>
+        </member>
+        <member name="P:Haunted.GameModel.IGameModel.Background">
+            <summary>
+            Gets or sets the background.
+            </summary>
+        </member>
+        <member name="T:Haunted.GameModel.Key">
+            <summary>
+            The Key element.
+            </summary>
+        </member>
+        <member name="M:Haunted.GameModel.Key.#ctor(System.Double,System.Double)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Haunted.GameModel.Key"/> class.
+            </summary>
+            <param name="x">X parameter.</param>
+            <param name="y">Y parameter.</param>
+        </member>
+        <member name="T:Haunted.GameModel.Life">
+            <summary>
+            The life element.
+            </summary>
+        </member>
+        <member name="M:Haunted.GameModel.Life.#ctor(System.Double,System.Double)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Haunted.GameModel.Life"/> class.
+            </summary>
+            <param name="x">X parameter.</param>
+            <param name="y">Y parameter.</param>
+        </member>
+        <member name="T:Haunted.GameModel.Time">
+            <summary>
+            The timme.
+            </summary>
+        </member>
+        <member name="M:Haunted.GameModel.Time.#ctor(System.Double,System.Double)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Haunted.GameModel.Time"/> class.
+            </summary>
+            <param name="x">X parameter.</param>
+            <param name="y">Y parameter.</param>
+        </member>
+        <member name="T:Haunted.GameModel.TimeToXML">
+            <summary>
+            Time to xml.
+            </summary>
+        </member>
+        <member name="P:Haunted.GameModel.TimeToXML.Name">
+            <summary>
+            The name.
+            </summary>
+        </member>
+        <member name="P:Haunted.GameModel.TimeToXML.Time">
+            <summary>
+            The time.
+            </summary>
+        </member>
+        <member name="M:Haunted.GameModel.TimeToXML.ToString">
+            <summary>
+            Override the ToString.
+            </summary>
+            <returns>A string.</returns>
+        </member>
+        <member name="M:Haunted.GameModel.TimeToXML.#ctor(System.String,System.TimeSpan)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Haunted.GameModel.TimeToXML"/> class.
+            </summary>
+            <param name="name">name.</param>
+            <param name="time">the time.</param>
+        </member>
     </members>
 </doc>

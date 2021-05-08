@@ -1,4 +1,4 @@
-﻿// <copyright file="Control.cs" company="PlaceholderCompany">
+﻿// <copyright file="GControl.cs" company="PlaceholderCompany">
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
@@ -13,16 +13,16 @@ namespace Haunted.GameControl
     using Haunted.GameModel;
 
     /// <summary>
-    /// 
+    /// The class.
     /// </summary>
     public class GControl : FrameworkElement
     {
-        Haunted.GameLogic.GameLogic logic;
-        Haunted.Renderer.Renderer renderer;
-        Haunted.GameModel.HauntedModel model;
-        Stopwatch stw;
-        Haunted.Repository.StorageRepository repo;
-        DispatcherTimer tickTimer;
+        private Haunted.GameLogic.GameLogic logic;
+        private Haunted.Renderer.Renderer renderer;
+        private Haunted.GameModel.HauntedModel model;
+        private Stopwatch stw;
+        private Haunted.Repository.StorageRepository repo;
+        private DispatcherTimer tickTimer;
         private string currentPlayerName;
         private string currentFileName;
 
@@ -31,8 +31,6 @@ namespace Haunted.GameControl
         /// </summary>
         public GControl()
         {
-<<<<<<< HEAD
-=======
             this.Loaded += this.Control_Loaded;
         }
 
@@ -42,7 +40,6 @@ namespace Haunted.GameControl
         /// <param name="playerName">A string.</param>
         public GControl(string playerName)
         {
->>>>>>> 40d28660a97f5bdbafdb2e29ddb8e9501eaa2420
             this.Loaded += this.Control_Loaded;
             this.currentPlayerName = playerName;
         }
@@ -57,6 +54,32 @@ namespace Haunted.GameControl
             this.currentPlayerName = playerName;
             this.currentFileName = fileName;
             this.Loaded += this.Control_LoadFile;
+        }
+
+        /// <summary>
+        /// Save game method.
+        /// </summary>
+        /// <param name="gameName">A string.</param>
+        public void SaveGame(string gameName)
+        {
+            this.repo.SaveGame(gameName, this.model);
+        }
+
+        /// <summary>
+        /// Continue method.
+        /// </summary>
+        public void Continue()
+        {
+            this.tickTimer.IsEnabled = true;
+        }
+
+        /// <inheritdoc/>
+        protected override void OnRender(DrawingContext drawingContext)
+        {
+            if (this.renderer != null)
+            {
+                drawingContext.DrawDrawing(this.renderer.BuildDrawing());
+            }
         }
 
         private void Control_Loaded(object sender, RoutedEventArgs e)
@@ -87,7 +110,7 @@ namespace Haunted.GameControl
             this.stw = new Stopwatch();
             this.model = this.repo.LoadGame(this.currentFileName);
             this.repo = new Repository.StorageRepository();
-            this.logic = new GameLogic.GameLogic(this.model, "Haunted.Haunted.map.lab.lvl", this.repo);
+            this.logic = new GameLogic.GameLogic(this.model, "Haunted.Haunted.map.L02.lvl", this.repo);
             this.renderer = new Renderer.Renderer(this.model);
 
             Window win = Window.GetWindow(this);
@@ -110,15 +133,6 @@ namespace Haunted.GameControl
             foreach (Ghost g in this.model.Ghosts)
             {
                  this.logic.MoveGhost(g);
-            }
-        }
-
-        /// <inheritdoc/>
-        protected override void OnRender(DrawingContext drawingContext)
-        {
-            if (this.renderer != null)
-            {
-                drawingContext.DrawDrawing(this.renderer.BuildDrawing());
             }
         }
 
@@ -146,25 +160,7 @@ namespace Haunted.GameControl
                 this.tickTimer.Stop();
                 this.stw.Stop();
                 MessageBox.Show("YAY!" + this.stw.Elapsed.ToString(@"hh\:mm\:ss\.fff"));
-
             }
-        }
-
-        /// <summary>
-        /// Save game method.
-        /// </summary>
-        /// <param name="gameName">A string.</param>
-        public void SaveGame(string gameName)
-        {
-            this.repo.SaveGame(gameName, this.model);
-        }
-
-        /// <summary>
-        /// Continue method.
-        /// </summary>
-        public void Continue()
-        {
-            this.tickTimer.IsEnabled = true;
         }
     }
 }

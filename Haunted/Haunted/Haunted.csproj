@@ -32,10 +32,12 @@
     <None Remove="Images\right_upp_corner.png" />
     <None Remove="Images\sidewalk_base.png" />
     <None Remove="Images\vertical_wall.png" />
+    <None Remove="map\L02.lvl" />
     <None Remove="map\lab.lvl" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="map\L02.lvl" />
     <EmbeddedResource Include="map\lab.lvl" />
   </ItemGroup>
 

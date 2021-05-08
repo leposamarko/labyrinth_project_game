@@ -13,29 +13,76 @@ namespace Haunted.GameModel
     /// <summary>
     /// config file.
     /// </summary>
-    public class Config //ezeknek még értéket kell adni
+    public class Config // ezeknek még értéket kell adni
     {
-        //sziv
+        // sziv
+
+        /// <summary>
+        /// X.
+        /// </summary>
         public static double HeartPlaceX;
+
+        /// <summary>
+        /// Y.
+        /// </summary>
         public static double HeartPlaceY;
+
+        /// <summary>
+        /// Size.
+        /// </summary>
         public static double HeartSize;
-        //stopper
+
+        // stopper
+
+        /// <summary>
+        /// X.
+        /// </summary>
         public static double TimePlaceX;
+
+        /// <summary>
+        /// Y.
+        /// </summary>
         public static double TimePlaceY;
+
+        /// <summary>
+        /// Size.
+        /// </summary>
         public static double TimeTextSize;
-        //szellem
+
+        // szellem
+
+        /// <summary>
+        /// Height.
+        /// </summary>
         public static double GhostHeight = 40;
+
+        /// <summary>
+        /// Widht.
+        /// </summary>
         public static double GhostWidth = 40;
-        public static double GhostSpeed; //(egyenlőre csak 1 sebesség))
-        //player
+
+        /// <summary>
+        /// Speed.
+        /// </summary>
+        public static double GhostSpeed; // (egyenlőre csak 1 sebesség))
+
+        // player
+
+        /// <summary>
+        /// Widht.
+        /// </summary>
         public static double PlayerWidth = 40;
+
+        /// <summary>
+        /// Height.
+        /// </summary>
         public static double PlayerHeight = 40;
-        //játék
-        //public static double GameWidth = 1280;
-        //public static double GameHeight = 720;
-        //kulcs
-        //public static double KeyPlaceX;
-        //public static double KeyPlaceY;
+
+        // játék
+
+        /// <summary>
+        /// Key size.
+        /// </summary>
         public static double KeySize = 30;
     }
 }

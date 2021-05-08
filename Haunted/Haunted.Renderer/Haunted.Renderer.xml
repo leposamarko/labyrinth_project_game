@@ -36,6 +36,12 @@
             reset method.
             </summary>
         </member>
+        <member name="M:Haunted.Renderer.Renderer.BuildDrawing">
+            <summary>
+            Building Drawing method.
+            </summary>
+            <returns>drawing.</returns>
+        </member>
         <member name="M:Haunted.Renderer.Renderer.GetBrush(System.String,System.Boolean)">
             <summary>
             GetBrush method.
@@ -43,12 +49,6 @@
             <param name="fname">image file name.</param>
             <param name="isTiled">filed showing.</param>
             <returns>burhes.</returns>
-        </member>
-        <member name="M:Haunted.Renderer.Renderer.BuildDrawing">
-            <summary>
-            Building Drawing method.
-            </summary>
-            <returns>drawing.</returns>
         </member>
     </members>
 </doc>

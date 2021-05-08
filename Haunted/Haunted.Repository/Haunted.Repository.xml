@@ -4,5 +4,65 @@
         <name>Haunted.Repository</name>
     </assembly>
     <members>
+        <member name="T:Haunted.Repository.IStorageRepository">
+            <summary>
+            Interface for the repo.
+            </summary>
+        </member>
+        <member name="M:Haunted.Repository.IStorageRepository.SaveGame(System.String,Haunted.GameModel.IGameModel)">
+            <summary>
+            To save a game.
+            </summary>
+            <param name="name">The players name.</param>
+            <param name="model">The model.</param>
+        </member>
+        <member name="M:Haunted.Repository.IStorageRepository.LoadGame(System.String)">
+            <summary>
+            Load the game.
+            </summary>
+            <param name="name">Players name, how it was saved.</param>
+            <returns>A model.</returns>
+        </member>
+        <member name="M:Haunted.Repository.IStorageRepository.NewTime(System.String,System.TimeSpan)">
+            <summary>
+            The new time.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="time">New time.</param>
+        </member>
+        <member name="M:Haunted.Repository.IStorageRepository.GetTime">
+            <summary>
+            Time to a list.
+            </summary>
+            <returns>A list.</returns>
+        </member>
+        <member name="T:Haunted.Repository.StorageRepository">
+            <summary>
+            Storage Repository.
+            </summary>
+        </member>
+        <member name="M:Haunted.Repository.StorageRepository.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Haunted.Repository.StorageRepository"/> class.
+            </summary>
+        </member>
+        <member name="M:Haunted.Repository.StorageRepository.GetFiles">
+            <summary>
+            To get the files froma json.
+            </summary>
+            <returns>A list.</returns>
+        </member>
+        <member name="M:Haunted.Repository.StorageRepository.GetTime">
+            <inheritdoc/>
+        </member>
+        <member name="M:Haunted.Repository.StorageRepository.LoadGame(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Haunted.Repository.StorageRepository.NewTime(System.String,System.TimeSpan)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Haunted.Repository.StorageRepository.SaveGame(System.String,Haunted.GameModel.IGameModel)">
+            <inheritdoc/>
+        </member>
     </members>
 </doc>
